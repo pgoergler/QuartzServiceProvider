@@ -9,7 +9,7 @@ use Silex\Application;
  *
  * @author paul
  */
-class QuartzServiceProvider extends \Silex\Provider\SessionServiceProvider
+class QuartzServiceProvider implements \Silex\ServiceProviderInterface
 {
 
     public function boot(Application $app)
@@ -19,8 +19,6 @@ class QuartzServiceProvider extends \Silex\Provider\SessionServiceProvider
 
     public function register(Application $app)
     {
-        parent::register($app);
-
         $app['quartz.databases'] = array();
         
         $app['quartz'] = $app->share(function() use (&$app)
