@@ -8,6 +8,7 @@
     "authors":  [ { "name": "Paul GOERGLER", "email": "pgoergler@gmail.com", "homepage": "http://soft.wayr.fr" } ],
     "require": {
         "php": ">=7.1", 
+        "pimple/pimple": "3.*",
         "quartz/quartz": "3.*"
     },
     "autoload": { "psr-0": { "Quartz\\QuartzServiceProvider": "src" } }
