@@ -2,17 +2,18 @@
 
 namespace Quartz\QuartzServiceProvider;
 
-use Pimple\Container;
+use Silex\Application,
+    Pimple\Container;
 
 /**
  * Description of QuartzServiceProvider
  *
  * @author paul
  */
-class QuartzServiceProvider implements \Pimple\ServiceProviderInterface
+class QuartzServiceProvider implements \Silex\Api\BootableProviderInterface, \Pimple\ServiceProviderInterface
 {
 
-    public function boot(Container $app)
+    public function boot(Application $app)
     {
         $app['orm']->init($app['quartz.databases']); // to init database
     }
